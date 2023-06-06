@@ -2,25 +2,36 @@
 //  ContentView.swift
 //  ObstacleDetection
 //
-//  Created by Yujin Kim on 2023-05-01.
+//  Created by Yujin Kim
 //
 
 import SwiftUI
 
 struct ContentView: View {
+	@StateObject var detector = Detector()
+	
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+		VStack {
+			Button(action: {
+				detector.toggleDetection()
+			}) {
+				Text(detector.isDetectionActivate ? "Turn off" : "Turn on")
+			}
+		}
+		ZStack {
+			CameraView(detector: detector)
+			DetectionOverlay(detector: detector)
+		}
+		.edgesIgnoringSafeArea(.all)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//#if DEBUG
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//		VStack {
+//			Text("ContentView: PreviewView")
+//		}
+//    }
+//}
+//#endif

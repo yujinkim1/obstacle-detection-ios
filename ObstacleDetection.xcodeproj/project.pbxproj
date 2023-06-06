@@ -11,6 +11,11 @@
 		1CDA396729FF974F006594E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDA396629FF974F006594E7 /* ContentView.swift */; };
 		1CDA396929FF974F006594E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CDA396829FF974F006594E7 /* Assets.xcassets */; };
 		1CDA396C29FF974F006594E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CDA396B29FF974F006594E7 /* Preview Assets.xcassets */; };
+		1CDA397329FF9766006594E7 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDA397229FF9766006594E7 /* CameraView.swift */; };
+		1CDA397529FF9841006594E7 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDA397429FF9841006594E7 /* Detector.swift */; };
+		1CDA397729FF9974006594E7 /* DetectionOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDA397629FF9974006594E7 /* DetectionOverlayView.swift */; };
+		1CDA397929FF99A0006594E7 /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1CDA397829FF99A0006594E7 /* YOLOv3Tiny.mlmodel */; };
+		1CDA397B29FF9A6A006594E7 /* Labeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDA397A29FF9A6A006594E7 /* Labeler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		1CDA396629FF974F006594E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1CDA396829FF974F006594E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CDA396B29FF974F006594E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1CDA397229FF9766006594E7 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		1CDA397429FF9841006594E7 /* Detector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		1CDA397629FF9974006594E7 /* DetectionOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionOverlayView.swift; sourceTree = "<group>"; };
+		1CDA397829FF99A0006594E7 /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = YOLOv3Tiny.mlmodel; path = ../../../Downloads/YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
+		1CDA397A29FF9A6A006594E7 /* Labeler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labeler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,13 @@
 		1CDA396329FF974F006594E7 /* ObstacleDetection */ = {
 			isa = PBXGroup;
 			children = (
+				1CDA397829FF99A0006594E7 /* YOLOv3Tiny.mlmodel */,
 				1CDA396429FF974F006594E7 /* ObstacleDetectionApp.swift */,
 				1CDA396629FF974F006594E7 /* ContentView.swift */,
+				1CDA397229FF9766006594E7 /* CameraView.swift */,
+				1CDA397629FF9974006594E7 /* DetectionOverlayView.swift */,
+				1CDA397429FF9841006594E7 /* Detector.swift */,
+				1CDA397A29FF9A6A006594E7 /* Labeler.swift */,
 				1CDA396829FF974F006594E7 /* Assets.xcassets */,
 				1CDA396A29FF974F006594E7 /* Preview Content */,
 			);
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CDA397329FF9766006594E7 /* CameraView.swift in Sources */,
+				1CDA397B29FF9A6A006594E7 /* Labeler.swift in Sources */,
 				1CDA396729FF974F006594E7 /* ContentView.swift in Sources */,
 				1CDA396529FF974F006594E7 /* ObstacleDetectionApp.swift in Sources */,
+				1CDA397529FF9841006594E7 /* Detector.swift in Sources */,
+				1CDA397929FF99A0006594E7 /* YOLOv3Tiny.mlmodel in Sources */,
+				1CDA397729FF9974006594E7 /* DetectionOverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +290,12 @@
 				DEVELOPMENT_TEAM = 4CLS27ED5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "애플리케이션을 사용하기 위해 카메라 접근 권한을 허용해야 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,6 +303,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = YujinKim.ObstacleDetection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,11 +323,12 @@
 				DEVELOPMENT_TEAM = 4CLS27ED5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "애플리케이션을 사용하기 위해 카메라 접근 권한을 허용해야 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +336,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = YujinKim.ObstacleDetection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

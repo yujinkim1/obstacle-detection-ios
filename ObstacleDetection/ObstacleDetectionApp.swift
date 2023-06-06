@@ -2,7 +2,7 @@
 //  ObstacleDetectionApp.swift
 //  ObstacleDetection
 //
-//  Created by Yujin Kim on 2023-05-01.
+//  Created by Yujin Kim
 //
 
 import SwiftUI
